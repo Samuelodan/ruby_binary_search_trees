@@ -22,4 +22,12 @@ class Tree
     node
   end
 
+  def insert(value, root = @root)
+    return Node.new(value) if root.nil? 
+
+    value > root.data && root.right = insert(value, root.right)
+    value < root.data && root.left = insert(value, root.left)
+
+    root
+  end
 end
