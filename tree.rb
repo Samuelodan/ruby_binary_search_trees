@@ -48,6 +48,8 @@ class Tree
     root
   end
 
+  private
+
   def min_value(root)
     min = root.data
     while root.left
