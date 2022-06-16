@@ -31,6 +31,23 @@ class Tree
     root
   end
 
+  def delete(value, root = @root)
+    return nil if root.nil
+
+    value > root.data && root.right = delete(value, root.right)
+    value < root.data && root.left = delete(value, root.left)
+
+    if value == root.data
+      return root.right unless root.left
+      return root.left unless root.right
+
+      root.value = min_value(root.right)
+
+      root.right = delete(root.value, root.right)
+    end
+    root
+  end
+
   def min_value(root)
     min = root.data
     while root.left
