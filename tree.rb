@@ -62,9 +62,8 @@ class Tree
   private
 
   def build
-   len = @src_array.length - 1
-   root_node = build_tree(@src_array, 0, len)
-   root_node
+    len = @src_array.length - 1
+    build_tree(@src_array, 0, len)
   end
 
   def min_value(root)
