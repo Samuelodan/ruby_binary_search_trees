@@ -5,8 +5,8 @@ require_relative './node'
 #creates trees
 class Tree
   def initialize src_array
-    @root = build_tree
-    @scr_array = scr_array
+    @src_array = src_array
+    @root = build
   end
 
   def build_tree(arr, start, ending)
@@ -49,6 +49,12 @@ class Tree
   end
 
   private
+
+  def build
+   len = @src_array.length - 1
+   root_node = build_tree(@src_array, 0, len)
+   root_node
+  end
 
   def min_value(root)
     min = root.data
