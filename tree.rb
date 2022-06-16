@@ -15,7 +15,7 @@ class Tree
     arr = arr.uniq.sort
 
     mid = (start + ending) / 2
-    node = Node.new([arr[mid]])
+    node = Node.new(arr[mid])
 
     node.left = build_tree(arr, start, mid - 1)
     node.right = build_tree(arr, mid + 1, ending)
