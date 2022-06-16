@@ -12,6 +12,8 @@ class Tree
   def build_tree(arr, start, ending)
     return nil if start > ending
 
+    arr = arr.uniq.sort
+
     mid = (start + ending) / 2
     node = Node.new([arr[mid]])
 
