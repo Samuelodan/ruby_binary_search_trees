@@ -4,7 +4,7 @@
 class Node
   attr_accessor :data, :left, :right
 
-  include 'comparable'
+  include Comparable
 
   def initialize data
     @data = data
