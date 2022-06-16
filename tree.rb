@@ -48,6 +48,17 @@ class Tree
     root
   end
 
+  def find(value, root = @root)
+    return nil unless root
+
+    new_val ||= ""
+
+    value > root.data && new_val = find(value, root.right)
+    value < root.data && new_val = find(value, root.left)
+    new_val = root if value == root.data
+    new_val
+  end
+
   private
 
   def build
