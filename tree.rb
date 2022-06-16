@@ -32,9 +32,9 @@ class Tree
   end
 
   def min_value(root)
-    min = root.key
+    min = root.data
     while root.left
-      min = root.left.key
+      min = root.left.data
       root = root.left
     end
     min
