@@ -41,9 +41,9 @@ class Tree
       return root.right unless root.left
       return root.left unless root.right
 
-      root.value = min_value(root.right)
+      root.data = min_value(root.right)
 
-      root.right = delete(root.value, root.right)
+      root.right = delete(root.data, root.right)
     end
     root
   end
