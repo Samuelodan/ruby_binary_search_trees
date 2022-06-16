@@ -57,4 +57,5 @@ class Tree
       root = root.left
     end
     min
+  end
 end
