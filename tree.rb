@@ -5,7 +5,7 @@ require_relative './node'
 #creates trees
 class Tree
   def initialize src_array
-    @root = nil
+    @root = build_tree
     @scr_array = scr_array
   end
 
