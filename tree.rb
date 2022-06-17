@@ -9,19 +9,6 @@ class Tree
     @root = build
   end
 
-  def build_tree(arr, start, ending)
-    return nil if start > ending
-
-    arr = arr.uniq.sort
-
-    mid = (start + ending) / 2
-    node = Node.new(arr[mid])
-
-    node.left = build_tree(arr, start, mid - 1)
-    node.right = build_tree(arr, mid + 1, ending)
-    node
-  end
-
   def insert(value, root = @root)
     return Node.new(value) if root.nil?
 
@@ -79,6 +66,19 @@ class Tree
   end
 
   private
+
+  def build_tree(arr, start, ending)
+    return nil if start > ending
+
+    arr = arr.uniq.sort
+
+    mid = (start + ending) / 2
+    node = Node.new(arr[mid])
+
+    node.left = build_tree(arr, start, mid - 1)
+    node.right = build_tree(arr, mid + 1, ending)
+    node
+  end
 
   def build
     len = @src_array.length - 1
