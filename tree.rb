@@ -1,8 +1,8 @@
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 require_relative './node'
 
-#creates trees
+# creates trees
 class Tree
   def initialize src_array
     @src_array = src_array
@@ -23,7 +23,7 @@ class Tree
   end
 
   def insert(value, root = @root)
-    return Node.new(value) if root.nil? 
+    return Node.new(value) if root.nil?
 
     value > root.data && root.right = insert(value, root.right)
     value < root.data && root.left = insert(value, root.left)
@@ -51,7 +51,7 @@ class Tree
   def find(value, root = @root)
     return nil unless root
 
-    new_val ||= ""
+    new_val ||= ''
 
     value > root.data && new_val = find(value, root.right)
     value < root.data && new_val = find(value, root.left)
