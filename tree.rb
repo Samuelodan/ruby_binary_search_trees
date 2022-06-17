@@ -59,6 +59,19 @@ class Tree
     new_val
   end
 
+  def level_order
+    stack = [@root]
+    ret_arr = []
+    until stack.empty?
+      cur_node = stack.first
+      cur_node.left && stack << cur_node.left
+      cur_node.right && stack << cur_node.right
+      yield stack.shift if block_given?
+      ret_arr << stack.shift.data unless block_given?
+    end
+    ret_arr unless block_given?
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
