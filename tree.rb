@@ -100,6 +100,11 @@ class Tree
     [node_height(root.left), node_height(root.right)].max + 1
   end
 
+  def depth(value)
+    node = find(value)
+    node_height(@root) - node_height(node)
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
