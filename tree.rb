@@ -94,11 +94,7 @@ class Tree
     node_height(node)
   end
 
-  def node_height(root)
-    return -1 unless root
 
-    [node_height(root.left), node_height(root.right)].max + 1
-  end
 
   def depth(value)
     node = find(value)
@@ -138,5 +134,11 @@ class Tree
       root = root.left
     end
     min
+  end
+
+  def node_height(root)
+    return -1 unless root
+
+    [node_height(root.left), node_height(root.right)].max + 1
   end
 end
