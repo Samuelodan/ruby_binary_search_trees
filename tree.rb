@@ -104,6 +104,11 @@ class Tree
     diff <= 1
   end
 
+  def rebalance
+    arr = preorder
+    @root = build_tree(arr, 0, arr.length - 1)
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
@@ -114,8 +119,6 @@ class Tree
 
   def build_tree(arr, start, ending)
     return nil if start > ending
-
-    arr = arr.uniq.sort
 
     mid = (start + ending) / 2
     node = Node.new(arr[mid])
