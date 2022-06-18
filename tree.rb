@@ -94,11 +94,14 @@ class Tree
     node_height(node)
   end
 
-
-
   def depth(value)
     node = find(value)
     node_height(@root) - node_height(node)
+  end
+
+  def balanced?
+    diff = (node_height(@root.left) - node_height(@root.right)).abs
+    diff <= 1
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
