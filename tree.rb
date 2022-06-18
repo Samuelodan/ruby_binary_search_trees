@@ -69,6 +69,16 @@ class Tree
     arr unless block_given?
   end
 
+  def preorder(root = @root, arr = [], &a_block)
+    return unless root
+
+    a_block.call root if block_given?
+    arr << root.data unless block_given?
+    preorder(root.left, arr, &a_block)
+    preorder(root.right, arr, &a_block)
+    arr unless block_given?
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
