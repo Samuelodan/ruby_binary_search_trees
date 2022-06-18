@@ -89,6 +89,17 @@ class Tree
     arr unless block_given?
   end
 
+  def height(value)
+    node = find(value)
+    node_height(node)
+  end
+
+  def node_height(root)
+    return -1 unless root
+
+    [node_height(root.left), node_height(root.right)].max + 1
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"
