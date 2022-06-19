@@ -10,25 +10,25 @@ puts "balanced?: #{my_tree.balanced?}"
 sleep 1
 puts 'printing node data...'
 puts 'level-order:'
-my_tree.level_order { |n| print "#{n.data} " }
+my_tree.level_order { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'preorder:'
-my_tree.preorder { |n| print "#{n.data} " }
+my_tree.preorder { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'postorder:'
-my_tree.postorder { |n| print "#{n.data} " }
+my_tree.postorder { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'in-order:'
-my_tree.in_order { |n| print "#{n.data} " }
+my_tree.in_order { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'inserting some nodes to umbalance the tree'
 8.times { |num| my_tree.insert(101 + num) }
 sleep 1
-puts "balanced: #{my_tree.balanced?}"
+puts "balanced?: #{my_tree.balanced?}"
 sleep 1
 puts 'rebalancing tree...'
 my_tree.rebalance
@@ -37,19 +37,19 @@ puts "balanced?: #{my_tree.balanced?}"
 sleep 1
 puts 'printing node data...'
 puts 'level-order:'
-my_tree.level_order { |n| print "#{n.data} " }
+my_tree.level_order { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'preorder:'
-my_tree.preorder { |n| print "#{n.data} " }
+my_tree.preorder { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'postorder:'
-my_tree.postorder { |n| print "#{n.data} " }
+my_tree.postorder { |n| print "#{n.data}, " }
 puts "\n"
 sleep 1
 puts 'in-order:'
-my_tree.in_order { |n| print "#{n.data} " }
+my_tree.in_order { |n| print "#{n.data}, " }
 puts "\n"
 
 puts "\nprinting entire tree...\n"
