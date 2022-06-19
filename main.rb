@@ -3,7 +3,7 @@
 require_relative './tree'
 
 # Test drive script
-puts "building new tree.."
+puts 'building new tree..'
 my_tree = Tree.new(Array.new(15) { rand(1..100) })
 sleep 1
 puts "balanced?: #{my_tree.balanced?}"

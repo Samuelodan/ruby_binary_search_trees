@@ -4,7 +4,7 @@ require_relative './node'
 
 # creates trees
 class Tree
-  def initialize src_array
+  def initialize(src_array)
     @src_array = src_array
     @root = build
   end
