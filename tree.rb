@@ -105,7 +105,7 @@ class Tree
   end
 
   def rebalance
-    arr = preorder
+    arr = preorder.uniq.sort
     @root = build_tree(arr, 0, arr.length - 1)
   end
 
