@@ -129,7 +129,8 @@ class Tree
   end
 
   def build
-    len = @src_array.length - 1
+    arr = @src_array.uniq.sort
+    len = arr.length - 1
     build_tree(@src_array, 0, len)
   end
 
