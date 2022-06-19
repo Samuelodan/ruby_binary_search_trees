@@ -8,6 +8,7 @@ my_tree = Tree.new(Array.new(15) { rand(1..100) })
 sleep 1
 puts "balanced?: #{my_tree.balanced?}"
 sleep 1
+puts 'printing node data...'
 puts 'level-order:'
 my_tree.level_order { |n| print "#{n.data} " }
 puts "\n"
@@ -34,6 +35,7 @@ my_tree.rebalance
 sleep 1
 puts "balanced?: #{my_tree.balanced?}"
 sleep 1
+puts 'printing node data...'
 puts 'level-order:'
 my_tree.level_order { |n| print "#{n.data} " }
 puts "\n"
@@ -49,5 +51,9 @@ sleep 1
 puts 'in-order:'
 my_tree.in_order { |n| print "#{n.data} " }
 puts "\n"
+
+puts "\nprinting entire tree...\n"
+sleep 1
+my_tree.pretty_print
 
 puts 'test completed...'
