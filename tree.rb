@@ -131,7 +131,7 @@ class Tree
   def build
     arr = @src_array.uniq.sort
     len = arr.length - 1
-    build_tree(@src_array, 0, len)
+    build_tree(arr, 0, len)
   end
 
   def min_value(root)
